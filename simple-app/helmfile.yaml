@@ -7,6 +7,6 @@ releases:
   namespace: default
   missingFileHandler: Debug
   values:
-  - simple-app-values.yaml
+  - dev-values.yaml
   chart:  hellokku/generic-booster
   version: 0.9.0
