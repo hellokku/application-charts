@@ -1,0 +1,6 @@
+dependencies:
+- name: generic-booster
+  repository: https://hellokku.github.io/helm-charts
+  version: 0.9.0
+digest: sha256:3d5836ca79fa01f023a5d97c1e0b63c50db355a044f278248b108ad09e35577f
+generated: "2022-05-30T13:45:23.923353+09:00"
