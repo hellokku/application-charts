@@ -4,7 +4,7 @@ generic-booster:
   image:
     repository: nginx
     pullPolicy: IfNotPresent
-    tag: 1.14.2
+    tag: 1.14.1
 
   replicaCount: 1
 
