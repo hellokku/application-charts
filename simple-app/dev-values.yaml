@@ -1,37 +1,38 @@
-appName: simple-app
+generic-booster:
+  appName: simple-app
 
-image:
-  repository: nginx
-  pullPolicy: IfNotPresent
-  tag: 1.14.2
+  image:
+    repository: nginx
+    pullPolicy: IfNotPresent
+    tag: 1.14.2
 
-replicaCount: 1
+  replicaCount: 1
 
-containerPorts:
-- containerPort: 80
-  name: http
-  protocol: TCP
+  containerPorts:
+  - containerPort: 80
+    name: http
+    protocol: TCP
 
-livenessProbe:
-  httpGet:
-    path: /
-    port: http
+  livenessProbe:
+    httpGet:
+      path: /
+      port: http
 
-readinessProbe:
-  httpGet:
-    path: /
-    port: http
+  readinessProbe:
+    httpGet:
+      path: /
+      port: http
 
-configMaps:
-- name: simple
-  data: 
-    index.html: |
-      <h1>Simple</h1>
-      
-configMapMounts:
+  configMaps:
   - name: simple
-    mountPath: /usr/share/nginx/html
+    data:
+      index.html: |
+        <h1>Simple</h1>
 
-podAnnotations:
-  fluentbit.io/exclude: "true"
-  prometheus.io/scrape: "false"
+  configMapMounts:
+    - name: simple
+      mountPath: /usr/share/nginx/html
+
+  podAnnotations:
+    fluentbit.io/exclude: "true"
+    prometheus.io/scrape: "false"
