@@ -8,21 +8,6 @@ generic-booster:
 
   replicaCount: 1
 
-  containerPorts:
-  - containerPort: 80
-    name: http
-    protocol: TCP
-
-  livenessProbe:
-    httpGet:
-      path: /
-      port: http
-
-  readinessProbe:
-    httpGet:
-      path: /
-      port: http
-
   configMaps:
   - name: simple
     data:

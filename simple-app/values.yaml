@@ -1,0 +1,17 @@
+generic-booster:
+  appName: simple-app
+
+  containerPorts:
+  - containerPort: 80
+    name: http
+    protocol: TCP
+
+  livenessProbe:
+    httpGet:
+      path: /
+      port: http
+
+  readinessProbe:
+    httpGet:
+      path: /
+      port: http
